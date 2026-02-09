@@ -1,0 +1,13 @@
+/* Start of the calculation script */
+int main() {
+    int _count = 50;
+    float $price = 19.99;    // Error 1: Illegal character '$'
+    string msg = "Hello;    // Error 2: Unclosed string literal
+    
+    int total = _count * 5.5.0; // Error 3: Malformed float (two dots)
+    
+    if (total > 100) {
+        print("Success");
+    }
+    return 0;
+}

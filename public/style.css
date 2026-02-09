@@ -1,0 +1,108 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    --ios-blue: #007aff;
+    --glass-bg: rgba(255, 255, 255, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.7);
+    --text-main: #1d1d1f;
+    /* Light Theme Terminal */
+    --terminal-light-bg: rgba(255, 255, 255, 0.4); 
+    --terminal-text: #2c3e50; 
+}
+
+body {
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.ios-glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    border: 1px solid var(--glass-border);
+    border-radius: 32px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05);
+    padding: 3rem;
+    width: 90%;
+    max-width: 950px;
+}
+
+/* --- LIGHT THEME OUTPUT BOX --- */
+.terminal-box {
+    background: var(--terminal-light-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    font-family: "SF Mono", "Fira Code", monospace;
+    color: var(--terminal-text); /* Dark text for light theme */
+    font-size: 14px;
+    line-height: 1.6;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.5), 0 5px 15px rgba(0,0,0,0.02);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* ERROR HIGHLIGHT FOR LIGHT THEME */
+.error-text {
+    color: #ff3b30; /* Brighter iOS Red */
+    font-weight: 700;
+    background: rgba(255, 59, 48, 0.08); /* Soft red highlight background */
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* --- LIGHT THEME INPUT FIELD --- */
+.form-control.terminal-box {
+    background: rgba(255, 255, 255, 0.3) !important;
+    color: var(--text-main) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    transition: all 0.3s ease;
+}
+
+.form-control.terminal-box:focus {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-color: var(--ios-blue) !important;
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1) !important;
+    outline: none;
+}
+
+/* --- LIQUID GLASS BUTTON --- */
+.btn-liquid {
+    position: relative;
+    padding: 16px 32px;
+    background: var(--ios-blue); /* Solid Blue by default */
+    border: 1px solid transparent;
+    border-radius: 18px;
+    color: #ffffff !important; /* White text by default */
+    font-weight: 700;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+}
+
+.btn-liquid:hover {
+    background: rgba(255, 255, 255, 0.2); /* Translucent Glass */
+    backdrop-filter: blur(15px); /* Glass Morph Effect */
+    -webkit-backdrop-filter: blur(15px);
+    color: var(--ios-blue) !important; /* Text turns Blue on hover */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.btn-liquid::before {
+    display: none;
+}

@@ -91,6 +91,7 @@ int main() {
     float val = 1.2.3; // Malformed float
     return 0;
 }
+
 📁 Project Structure
 
 FluxLEX/
@@ -101,6 +102,7 @@ FluxLEX/
 ├── cc_final.l          # Flex Source File (Token Rules)
 ├── scanner_final       # Compiled Binary Engine
 └── README.md           # Documentation
+
 💻 Author
 
 Shabi Creations
